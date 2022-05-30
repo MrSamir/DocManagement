@@ -1,0 +1,92 @@
+<form [formGroup]="mappingForm" (ngSubmit)="save()">
+  <div class="card ">
+    <!-- <div class="card-header">
+      <strong>Mappings</strong>
+
+
+
+
+      <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+        <button type="button" class="btn-close" (click)="close()"></button>
+      </div>
+
+
+    </div> -->
+
+    <h2 class="card-header d-flex justify-content-between align-items-center">
+      Mappings
+      <button type="button" class="btn-close btn-sm" (click)="close()"></button>
+
+      <!-- Wrap with <div>...buttons...</div> if you have multiple buttons -->
+    </h2>
+    <div class="card-body">
+
+
+      <div class="row">
+
+        <div class="col">
+
+
+
+          <label for="keyword">Keyword</label>
+          <ng-select [items]="keywords" id="keyword" bindLabel="name" addTagText="Create New"
+            [addTag]="createNewKeyword" placeholder="Select Keyword"
+            [ngClass]="{ 'is-invalid': _submit && form['keywordID'].errors }" bindValue="id"
+            formControlName="keywordID">
+
+
+          </ng-select>
+          <div *ngIf="_submit && form['keywordID'].errors" class="invalid-feedback">
+            <span *ngIf="form['keywordID'].errors['required']">Please Select Keyword
+            </span>
+          </div>
+        </div>
+        <div class="col">
+          <label for="document">document</label>
+          <ng-select [items]="documents" id="keyword" bindLabel="name"
+            [ngClass]="{ 'is-invalid': _submit && form['documentID'].errors }" bindValue="id"
+            formControlName="documentID">
+
+
+          </ng-select>
+          <div *ngIf="_submit && form['documentID'].errors" class="invalid-feedback">
+            <span *ngIf="form['documentID'].errors['required']">Please Select Document
+            </span>
+          </div>
+
+        </div>
+
+      </div>
+
+
+    </div>
+    <div class="card-footer">
+
+      <div class="row">
+        <div class="d-grid gap-2 col-6">
+
+
+          <button type="button" type="submit" class="btn btn-block btn-success">
+            Save
+          </button>
+        </div>
+        <div class="d-grid gap-2 col-6">
+
+
+          <button type="button" (click)="close()" class="btn btn-block btn-secondary">
+            Cancel
+          </button>
+        </div>
+
+
+
+
+
+
+
+
+      </div>
+
+    </div>
+  </div>
+</form>
