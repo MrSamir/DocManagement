@@ -6,6 +6,7 @@ B)Backend (Repository and Dapper)
 -Using Dapper to get better performance and control over the database and SP's
 
 C)UI (Angular)
+-Run NPM I to install node modules
 -Packages used 
 NG-Select/NG-Select
 bootstrap
