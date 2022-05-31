@@ -1,4 +1,5 @@
 # DocManagement
+##Kindly, consider the instructions.txt file
  A-Batabase (SQL Server 2019)
 -Create Datebase with the name DocManagement and run the scripts in the folder DocManagment.DBScripts
 -Mapping made many to many
